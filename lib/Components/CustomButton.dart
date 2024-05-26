@@ -9,6 +9,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onTap,
       child: Container(
         height: 45,
         width: title.length > 5 ? 250 : 120,
@@ -23,5 +24,43 @@ class CustomButton extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class SidebarButton extends StatelessWidget {
+  final String title;
+  final VoidCallback onTap;
+  final Color? color, textColor;
+  const SidebarButton(
+      {super.key,
+      required this.onTap,
+      required this.title,
+      this.color,
+      this.textColor});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          height: 45,
+          width: double.infinity,
+          decoration: BoxDecoration(
+              color: color, borderRadius: BorderRadius.circular(6)),
+          child: Center(
+            child: Text(
+              title,
+              style: GoogleFonts.poppins(
+                  color: textColor ?? Colors.deepPurple,
+                  fontSize: 16,
+                  letterSpacing: 2),
+            ),
+          ),
+        ),
+      ),
+    );
+    ;
   }
 }
