@@ -19,8 +19,10 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
+    var _size = MediaQuery.of(context).size.height;
     return Padding(
-      padding: const EdgeInsets.all(120),
+      padding: const EdgeInsets.symmetric
+      (horizontal:120),
       child: GetBuilder(
           init: AuthController(),
           builder: (controller) {
@@ -33,22 +35,20 @@ class _LoginFormState extends State<LoginForm> {
                   Text(
                     "Sign in",
                     style: GoogleFonts.poppins(
-                        fontSize: 52,
+                        fontSize: _size*0.08,
                         fontWeight: FontWeight.w900,
                         color: Colors.deepPurple),
                   ),
-                  SizedBox(
-                    height: 10,
-                  ),
+                
                   Text(
                     "Enter your email and password to continue.",
                     style: GoogleFonts.poppins(
-                        fontSize: 18,
+                       
                         fontWeight: FontWeight.w400,
                         letterSpacing: 2),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 4,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 130.0),
@@ -63,30 +63,13 @@ class _LoginFormState extends State<LoginForm> {
                           focusNode: controller.emailNode,
                         ),
                         SizedBox(
-                          height: 8,
+                          height: 4,
                         ),
                         PasswordField(
                             controller: controller.passController,
                             label: "Password",
                             focusNode: controller.passNode),
-                        // SizedBox(
-                        //   height: 8,
-                        // ),
-                        // Row(
-                        //   children: [
-                        //     Checkbox(
-                        //       value: controller.SavedPassword,
-                        //       onChanged: (newVal) {
-                        //         controller.toggleSavedPassword();
-                        //       },
-                        //     ),
-                        //     Text(
-                        //       "Remember Password?",
-                        //       style: GoogleFonts.poppins(
-                        //           fontSize: 12, letterSpacing: 1.5),
-                        //     )
-                        //   ],
-                        // ),
+                       
                         SizedBox(
                           height: 16,
                         ),
@@ -96,13 +79,13 @@ class _LoginFormState extends State<LoginForm> {
                             },
                             title: "Login"),
                         SizedBox(
-                          height: 16,
+                          height: 8,
                         ),
                         RichText(
                           text: TextSpan(
                               text: "Don't have an account? ",
                               style: GoogleFonts.poppins(
-                                  fontSize: 12, letterSpacing: 1.5),
+                                  fontSize:  _size*0.02, letterSpacing: 1.5),
                               children: [
                                 TextSpan(
                                   recognizer: TapGestureRecognizer()
@@ -111,7 +94,7 @@ class _LoginFormState extends State<LoginForm> {
                                     },
                                   text: "Sign Up.",
                                   style: GoogleFonts.poppins(
-                                      fontSize: 16,
+                                      fontSize:  _size*0.02,
                                       color: Colors.deepPurple,
                                       fontWeight: FontWeight.w900),
                                 )

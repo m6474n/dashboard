@@ -1,3 +1,4 @@
+import 'package:dashboard/Screens/tabs/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,6 +13,11 @@ class DashboardController extends GetxController {
     pageController = PageController();
   }
 
+  List<Widget> tabs = [
+Home(),
+
+
+  ];
   changePage(String page) {
     pageController.animateToPage(
         page == "Home"

@@ -16,12 +16,16 @@ class CustomInputField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       focusNode: focusNode,
+               style: GoogleFonts.poppins(
+           fontSize: 14, letterSpacing: 1),
       decoration: InputDecoration(
           hintText: label,
           hintStyle: GoogleFonts.poppins(
-              color: Colors.grey, fontSize: 16, letterSpacing: 1),
+              color: Colors.grey, fontSize: 14, letterSpacing: 1),
           filled: true,
           fillColor: Colors.grey.shade200,
+                    contentPadding: EdgeInsets.symmetric(vertical: 1 ,horizontal: 16),
+
           border: OutlineInputBorder(
               borderSide: BorderSide.none,
               borderRadius: BorderRadius.circular(6))),

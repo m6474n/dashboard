@@ -5,7 +5,6 @@ import 'package:dashboard/Components/PasswordField.dart';
 import 'package:dashboard/Components/RegisterForm.dart';
 import 'package:dashboard/Controllers/AuthController.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 

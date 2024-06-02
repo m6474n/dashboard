@@ -19,7 +19,7 @@ class CustomButton extends StatelessWidget {
           child: Text(
             title,
             style: GoogleFonts.poppins(
-                color: Colors.white, fontSize: 16, letterSpacing: 2.5),
+                color: Colors.white, fontSize: 14, letterSpacing: 2.5),
           ),
         ),
       ),
@@ -40,23 +40,20 @@ class SidebarButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4),
-      child: GestureDetector(
-        onTap: onTap,
-        child: Container(
-          height: 45,
-          width: double.infinity,
-          decoration: BoxDecoration(
-              color: color, borderRadius: BorderRadius.circular(6)),
-          child: Center(
-            child: Text(
-              title,
-              style: GoogleFonts.poppins(
-                  color: textColor ?? Colors.deepPurple,
-                  fontSize: 16,
-                  letterSpacing: 2),
-            ),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 50,
+        width: double.infinity,
+        decoration: BoxDecoration(
+            color: color, borderRadius: BorderRadius.circular(6)),
+        child: Center(
+          child: Text(
+            title,
+            style: GoogleFonts.poppins(
+                color: textColor ?? Colors.deepPurple,
+                fontSize: 14,
+                letterSpacing: 2),
           ),
         ),
       ),

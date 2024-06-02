@@ -25,6 +25,8 @@ class _PasswordFieldState extends State<PasswordField> {
       controller: widget.controller,
       focusNode: widget.focusNode,
       obscureText: obscure,
+               style: GoogleFonts.poppins(
+            fontSize: 14, letterSpacing: 1),
       decoration: InputDecoration(
           suffixIcon: IconButton(
             icon: Icon(
@@ -36,8 +38,10 @@ class _PasswordFieldState extends State<PasswordField> {
             },
           ),
           hintText: widget.label,
+                    contentPadding: EdgeInsets.symmetric(vertical: 1 ,horizontal: 16),
+
           hintStyle: GoogleFonts.poppins(
-              color: Colors.grey, fontSize: 16, letterSpacing: 1),
+              color: Colors.grey, fontSize: 14, letterSpacing: 1),
           filled: true,
           fillColor: Colors.grey.shade200,
           border: OutlineInputBorder(

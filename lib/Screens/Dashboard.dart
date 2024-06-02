@@ -2,6 +2,7 @@ import 'package:dashboard/Components/CustomAppbar.dart';
 import 'package:dashboard/Components/CustomButton.dart';
 import 'package:dashboard/Components/sideBar.dart';
 import 'package:dashboard/Controllers/dashboardController.dart';
+import 'package:dashboard/Screens/tabs/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
@@ -15,21 +16,6 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  // late PageController _controller;
-  // var selecteedIndex = 0;
-  // @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  //   _controller = PageController();
-  // }
-
-  // @override
-  // void dispose() {
-  //   // TODO: implement dispose
-  //   super.dispose();
-  // }
-
   @override
   Widget build(BuildContext context) {
     double _width = MediaQuery.of(context).size.width;
@@ -53,9 +39,9 @@ class _DashboardState extends State<Dashboard> {
                     children: [
                       Expanded(flex: 1, child: Container(child: Sidebar())),
                       Expanded(
-                          flex: 5,
+                          flex: 4,
                           child: Container(
-                              color: Colors.grey,
+                              
                               child: PageView(
                                 controller: controller.pageController,
                                 scrollDirection: Axis.vertical,
@@ -64,12 +50,7 @@ class _DashboardState extends State<Dashboard> {
                                 },
                                 physics: NeverScrollableScrollPhysics(),
                                 children: [
-                                  Container(
-                                    color: Colors.blue,
-                                    child: Center(
-                                      child: Text('Home'),
-                                    ),
-                                  ),
+                                  Home(),
                                   Container(
                                     color: Colors.red,
                                     child: Center(

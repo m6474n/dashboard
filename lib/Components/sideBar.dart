@@ -16,66 +16,69 @@ class _SidebarState extends State<Sidebar> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        // color: Colors.grey.shade100,
-        child: Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        SidebarButton(
-          title: 'Home',
-          color: controller.selecteedIndex == 0
-              ? Colors.deepPurple
-              : Colors.transparent,
-          textColor:
-              controller.selecteedIndex == 0 ? Colors.white : Colors.deepPurple,
-          onTap: () {
-            // controller.changePage("Home");
-            controller.pageController.animateToPage(0,
-                duration: Duration(milliseconds: 500), curve: Curves.ease);
-          },
-        ),
-        SidebarButton(
-          title: 'About',
-          color: controller.selecteedIndex == 1
-              ? Colors.deepPurple
-              : Colors.transparent,
-          textColor:
-              controller.selecteedIndex == 1 ? Colors.white : Colors.deepPurple,
-          onTap: () {
-            // controller.changePage("About");
-            controller.pageController.animateToPage(1,
-                duration: Duration(milliseconds: 500), curve: Curves.ease);
-          },
-        ),
-        SidebarButton(
-          title: 'Support',
-          color: controller.selecteedIndex == 2
-              ? Colors.deepPurple
-              : Colors.transparent,
-          textColor:
-              controller.selecteedIndex == 2 ? Colors.white : Colors.deepPurple,
-          onTap: () {
-            // controller.changePage("Support");
-            controller.pageController.animateToPage(2,
-                duration: Duration(milliseconds: 500), curve: Curves.ease);
-          },
-        ),
-        SidebarButton(
-          title: 'Contact',
-          color: controller.selecteedIndex == 3
-              ? Colors.deepPurple
-              : Colors.transparent,
-          textColor:
-              controller.selecteedIndex == 3 ? Colors.white : Colors.deepPurple,
-          onTap: () {
-            controller.pageController.animateToPage(3,
-                duration: Duration(milliseconds: 500), curve: Curves.ease);
-
-            // controller.changePage("Contact");
-          },
-        ),
-      ],
-    ));
+    return Padding(
+      padding: const EdgeInsets.only(top:8, left: 18, bottom: 18, right: 9),
+      child: Container(
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(12),color: Colors.white)
+      ,        child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SidebarButton(
+            title: 'Home',
+            color: controller.selecteedIndex == 0
+                ? Colors.deepPurple
+                : Colors.transparent,
+            textColor:
+                controller.selecteedIndex == 0 ? Colors.white : Colors.deepPurple,
+            onTap: () {
+              // controller.changePage("Home");
+              controller.pageController.animateToPage(0,
+                  duration: Duration(milliseconds: 500), curve: Curves.ease);
+            },
+          ),
+          SidebarButton(
+            title: 'About',
+            color: controller.selecteedIndex == 1
+                ? Colors.deepPurple
+                : Colors.transparent,
+            textColor:
+                controller.selecteedIndex == 1 ? Colors.white : Colors.deepPurple,
+            onTap: () {
+              // controller.changePage("About");
+              controller.pageController.animateToPage(1,
+                  duration: Duration(milliseconds: 500), curve: Curves.ease);
+            },
+          ),
+          SidebarButton(
+            title: 'Support',
+            color: controller.selecteedIndex == 2
+                ? Colors.deepPurple
+                : Colors.transparent,
+            textColor:
+                controller.selecteedIndex == 2 ? Colors.white : Colors.deepPurple,
+            onTap: () {
+              // controller.changePage("Support");
+              controller.pageController.animateToPage(2,
+                  duration: Duration(milliseconds: 500), curve: Curves.ease);
+            },
+          ),
+          SidebarButton(
+            title: 'Contact',
+            color: controller.selecteedIndex == 3
+                ? Colors.deepPurple
+                : Colors.transparent,
+            textColor:
+                controller.selecteedIndex == 3 ? Colors.white : Colors.deepPurple,
+            onTap: () {
+              controller.pageController.animateToPage(3,
+                  duration: Duration(milliseconds: 500), curve: Curves.ease);
+      
+              // controller.changePage("Contact");
+            },
+          ),
+        ],
+      )),
+    );
   }
 }
